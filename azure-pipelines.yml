@@ -17,9 +17,9 @@ steps:
     version: '5.x'
 
 - task: NodeTool@0
-   inputs:
-     versionSpec: '10.x'
-   displayName: 'Install Node.js'
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
 
 - task: Npm@1
   displayName: 'Run npm install'
