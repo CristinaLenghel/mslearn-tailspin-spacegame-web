@@ -2,7 +2,7 @@ trigger:
 - '*'
 
 pool:
-  vmImage: 'ubuntu-20.04'
+  vmImage: 'ubuntu-latest'
   demands:
   - npm
 
@@ -17,6 +17,11 @@ steps:
   inputs:
     version: '$(dotnetSdkVersion)'
 
+- task: NodeTool@0
+  inputs:
+    versionSpec: '10.x'
+  displayName: 'Install Node.js'
+  
 - task: Npm@1
   displayName: 'Run npm install'
   inputs:
