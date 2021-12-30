@@ -2,7 +2,7 @@ trigger:
 - '*'
 
 pool:
-  vmImage: 'ubuntu-20.04'
+  vmImage: 'ubuntu-latest'
   demands:
   - npm
 
@@ -16,9 +16,15 @@ steps:
     packageType: sdk
     version: '5.x'
 
+- task: NodeTool@0
+   inputs:
+     versionSpec: '10.x'
+   displayName: 'Install Node.js'
+
 - task: Npm@1
   displayName: 'Run npm install'
   inputs:
+    command: 'install'
     verbose: false
 
 - script: './node_modules/.bin/node-sass Tailspin.SpaceGame.Web/wwwroot --output Tailspin.SpaceGame.Web/wwwroot'
