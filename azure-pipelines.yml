@@ -50,7 +50,7 @@ steps:
   inputs:
     command: custom
     custom: tool
-    argument: 'restore'
+    arguments: 'restore'
 
 - task: DotNetCoreCLI@2
   displayName: 'Run unit tests - $(buildConfiguration)'
@@ -69,7 +69,7 @@ steps:
 
 - task: PublishCodeCoverageResults@1
   displayName: 'Publish code coverage report'
-  inputs: 
+  inputs:
     codeCoverageTool: 'cobertura'
     summaryFileLocation: '$(Build.SourcesDirectory)/**/coverage.cobertura.xml'
 
