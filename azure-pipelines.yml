@@ -69,7 +69,7 @@ steps:
 
 - task: PublishCodeCoverageResult@1
   displayName: 'Publish code coverage report'
-  imputs: 
+  inputs: 
     codeCoverageTool: 'cobertura'
     summaryFileLocation: '$(Build.SourcesDirectory)/**/coverage.cobertura.xml'
 
